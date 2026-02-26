@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Đầm Phá Làng An Xuân</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+--bg:#0b1120;
+--surface:rgba(255,255,255,0.05);
+--glass:rgba(255,255,255,0.08);
+--border:rgba(255,255,255,0.08);
+--accent:#38bdf8;
+--accent-soft:#0ea5e9;
+--text:#f8fafc;
+--muted:#94a3b8;
+--max-width:1200px;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:radial-gradient(circle at 20% 20%, #0f172a, #020617 70%);
+color:var(--text);
+line-height:1.8;
+scroll-behavior:smooth;
+overflow-x:hidden;
+}
+
+/* ================= NAVBAR ================= */
+
+nav{
+position:fixed;
+top:18px;
+left:50%;
+transform:translateX(-50%);
+width:92%;
+max-width:1100px;
+padding:12px 30px;
+border-radius:60px;
+background:rgba(15,23,42,0.6);
+backdrop-filter:blur(20px);
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:1000;
+border:1px solid var(--border);
+box-shadow:0 10px 40px rgba(0,0,0,0.5);
+}
+
+nav h2{
+font-size:15px;
+font-weight:700;
+letter-spacing:1px;
+}
+
+nav ul{
+display:flex;
+gap:20px;
+list-style:none;
+}
+
+nav a{
+font-size:14px;
+color:var(--muted);
+text-decoration:none;
+transition:.3s;
+padding:6px 10px;
+border-radius:20px;
+}
+
+nav a:hover{
+color:var(--text);
+background:var(--glass);
+}
+
+/* ================= HERO ================= */
+
+.hero{
+min-height:90vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:160px 20px 80px;
+text-align:center;
+background:
+linear-gradient(to bottom,rgba(0,0,0,0.5),rgba(2,6,23,1)),
+url("https://images.unsplash.com/photo-1501785888041-af3ef285b470")
+center/cover no-repeat;
+}
+
+.hero h1{
+font-size:52px;
+font-weight:800;
+margin-bottom:20px;
+background:linear-gradient(90deg,#38bdf8,#0ea5e9,#22d3ee);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.hero p{
+font-size:18px;
+color:var(--muted);
+max-width:700px;
+margin:auto;
+}
+
+/* ================= SECTION ================= */
+
+section{
+padding:110px 20px;
+display:flex;
+justify-content:center;
+}
+
+.container{
+max-width:var(--max-width);
+width:100%;
+}
+
+.section-title{
+font-size:36px;
+font-weight:800;
+margin-bottom:30px;
+position:relative;
+}
+
+.section-title::after{
+content:"";
+position:absolute;
+bottom:-10px;
+left:0;
+width:60px;
+height:3px;
+background:var(--accent);
+border-radius:3px;
+}
+
+/* ================= GRID ================= */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+margin-top:40px;
+}
+
+.card{
+background:var(--surface);
+backdrop-filter:blur(20px);
+border:1px solid var(--border);
+padding:30px;
+border-radius:20px;
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+background:var(--glass);
+box-shadow:0 20px 50px rgba(0,0,0,0.4);
+}
+
+.card h3{
+margin-bottom:15px;
+font-size:20px;
+}
+
+.card p{
+color:var(--muted);
+}
+
+/* ================= IMAGE ================= */
+
+.image-block img{
+width:100%;
+border-radius:20px;
+margin-top:40px;
+box-shadow:0 20px 50px rgba(0,0,0,0.6);
+transition:.5s;
+}
+
+.image-block img:hover{
+transform:scale(1.03);
+}
+
+/* ================= VIDEO ================= */
+
+.video iframe{
+width:100%;
+height:480px;
+border-radius:20px;
+box-shadow:0 25px 60px rgba(0,0,0,0.6);
+}
+
+/* ================= BUTTON ================= */
+
+.btn{
+margin-top:30px;
+padding:14px 30px;
+border-radius:30px;
+border:none;
+background:linear-gradient(90deg,#38bdf8,#0ea5e9);
+color:white;
+font-weight:600;
+cursor:pointer;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-4px);
+box-shadow:0 15px 35px rgba(14,165,233,0.4);
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+margin-top:100px;
+padding:60px 20px;
+background:#020617;
+text-align:center;
+color:var(--muted);
+font-size:14px;
+border-top:1px solid var(--border);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+.hero h1{font-size:38px;}
+.video iframe{height:300px;}
+}
+/* ================= BOOKING ================= */
+
+.booking-wrapper{
+display:grid;
+grid-template-columns:1fr 1.2fr;
+gap:50px;
+margin-top:50px;
+align-items:start;
+}
+
+.booking-info h3{
+font-size:24px;
+margin-bottom:15px;
+}
+
+.booking-info p{
+color:var(--muted);
+}
+
+.booking-form{
+background:var(--surface);
+padding:40px;
+border-radius:20px;
+border:1px solid var(--border);
+backdrop-filter:blur(20px);
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+.form-group{
+display:flex;
+flex-direction:column;
+}
+
+.form-group.full{
+grid-column:1/-1;
+}
+
+.form-group label{
+margin-bottom:6px;
+font-size:14px;
+color:var(--muted);
+}
+
+.form-group input,
+.form-group textarea{
+padding:12px 14px;
+border-radius:12px;
+border:1px solid var(--border);
+background:rgba(255,255,255,0.04);
+color:var(--text);
+outline:none;
+transition:.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus{
+border-color:var(--accent);
+box-shadow:0 0 0 2px rgba(56,189,248,0.2);
+}
+
+.booking-form .btn{
+grid-column:1/-1;
+margin-top:10px;
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+.booking-wrapper{
+grid-template-columns:1fr;
+}
+.booking-form{
+grid-template-columns:1fr;
+}
+}
+body{
+font-family: Arial;
+margin:0;
+background:#f5f5f5;
+color:#222;
+transition:0.3s;
+}
+
+.section{
+padding:40px;
+}
+
+.card{
+display:flex;
+gap:20px;
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+margin-top:20px;
+}
+
+.card img{
+width:300px;
+border-radius:10px;
+}
+
+/* Dark mode */
+
+.dark{
+
+background:#121212;
+color:white;
+
+}
+
+.dark .card{
+
+background:#1e1e1e;
+
+}
+
+/* Nút */
+
+#themeToggle{
+
+position:fixed;
+
+top:20px;
+
+right:20px;
+
+padding:10px 20px;
+
+border:none;
+
+border-radius:20px;
+
+background:#333;
+
+color:white;
+
+cursor:pointer;
+
+}
+.video-box{
+text-align:center;
+margin:30px 0;
+}
+
+video{
+width:100%;
+max-width:700px;
+border-radius:12px;
+}
+</style>
+</head>
+
+<body>
+  <button id="themeToggle">
+🌙 Dark Mode
+</button>
+
+<nav>
+<div class="nav-container">
+<h2>An Xuân Lagoon</h2>
+<ul>
+<li><a href="#tongquan">Tổng quan</a></li>
+<li><a href="#sinhthai">Sinh thái</a></li>
+<li><a href="#kinhte">Kinh tế</a></li>
+<li><a href="#vanhoa">Văn hóa</a></li>
+<li><a href="#phattrien">Phát triển</a></li>
+</ul>
+</div>
+</nav>
+
+<section class="hero">
+<div class="hero-content">
+<div class="hero-text">
+<h1>Đầm Phá Làng An Xuân</h1>
+<p>Không chỉ là vùng nước ven biển, đây là hệ sinh thái sống động gắn liền với lịch sử,
+kinh tế và bản sắc văn hóa của cộng đồng địa phương.</p>
+<h2> Desigh by : nhóm 2</h2>
+<button class="btn" onclick="location.href='#tongquan'">Khám phá</button>
+</div>
+</div>
+</section>
+
+<section id="tongquan">
+<div class="container">
+<h2 class="section-title">Tổng Quan</h2>
+<p>
+Đầm Phá Làng An Xuân là khu vực đầm nước mặn – lợ đặc trưng vùng ven biển miền Trung.
+Quá trình bồi tụ phù sa qua nhiều thế hệ đã hình thành nên một không gian sinh thái ổn định,
+đóng vai trò quan trọng trong cân bằng môi trường và sinh kế của cư dân địa phương.
+</p>
+<div class="image-block">
+<img src="https://cdn3.ivivu.com/2022/09/pha-tam-giang-ivivu-9.jpg">
+</div>
+</div>
+</section>
+
+<section id="sinhthai">
+<div class="container">
+<h2 class="section-title">Giá Trị Sinh Thái</h2>
+ <img src="https://sodulich.ninhbinh.gov.vn/uploads/images/Du_lich_-_Di_san/26941473_1618375031575454_1463732535_o.jpg" alt="Giá trị sinh thái" class="section-img">
+<div class="grid">
+<div class="card">
+<h3>Đa dạng sinh học</h3>
+<p>Nơi cư trú của nhiều loài thủy sản, chim nước và hệ thực vật ngập mặn.</p>
+</div>
+<div class="card">
+<h3>Điều hòa khí hậu</h3>
+<p>Giúp giảm xói mòn, hạn chế tác động của triều cường và biến đổi khí hậu.</p>
+</div>
+<div class="card">
+<h3>Cân bằng môi trường</h3>
+<p>Hệ sinh thái đầm phá duy trì vòng tuần hoàn tự nhiên của nước và dinh dưỡng.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="kinhte">
+<div class="container">
+<h2 class="section-title">Giá Trị Kinh Tế</h2>
+<img src="https://baodongnai.com.vn/file/e7837c02876411cd0187645a2551379f/dataimages/202303/original/images2517531_3A.jpg" alt="Giá trị kinh tế" class="section-img">
+<p>
+Hoạt động nuôi trồng và khai thác thủy sản là nguồn thu nhập chính của người dân.
+Bên cạnh đó, tiềm năng phát triển du lịch sinh thái đang mở ra hướng đi bền vững,
+kết hợp giữa bảo tồn và khai thác hợp lý tài nguyên.
+</p>
+</div>
+</section>
+
+<section id="vanhoa">
+<div class="container">
+<h2 class="section-title">Văn Hóa Cộng Đồng</h2>
+<img src="https://dantocmiennui-media.baotintuc.vn/images/84426cb421b40f0fbef0009243df48a980d460e0a6ecea725fd8af0c12212b548a9dce6a0cee27d4a0c13a1859d5a6620863f9f33b702957410be8bfaba5b7e2/hie-5537-1602.jpg">
+<p>
+<p>
+Hình ảnh thuyền ghe trên mặt nước, những phiên chợ sớm và lễ hội cầu ngư
+đã tạo nên bản sắc văn hóa đặc trưng của vùng đầm phá.
+Đây không chỉ là không gian tự nhiên mà còn là ký ức tập thể của nhiều thế hệ.
+</p>
+</div>
+</section>
+
+<section id="phattrien">
+<div class="container">
+<h2 class="section-title">Định Hướng Phát Triển Bền Vững</h2>
+<img src="https://media.vneconomy.vn/images/upload/2023/11/09/img-5424.jpeg">
+<p>
+Việc bảo tồn hệ sinh thái đầm phá cần được kết hợp với quy hoạch du lịch hợp lý,
+giảm thiểu tác động môi trường và nâng cao nhận thức cộng đồng.
+Mô hình phát triển xanh sẽ đảm bảo giá trị lâu dài cho khu vực.
+</p>
+</div>
+
+<section style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 50px 0; background-color: #f4f4f4;">
+    
+    <h2 style="font-family: Arial, sans-serif; color: #333; margin-bottom: 25px; font-size: 28px;">
+        Video Giới Thiệu
+    </h2>
+
+   <div style="width: 90%; max-width: 900px; position: relative; padding-top: 56.25%; box-shadow: 0 15px 35px rgba(0,0,0,0.3); border-radius: 15px; overflow: hidden; background: #000;">
+        <iframe 
+            width="100%" 
+            height="100%" 
+            src="https://www.youtube.com/embed/U6A-7P4Ua5Q?si=BA_8shohWnGFnfTF" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen>
+        </iframe>
+    </div>
+
+</section>
+<section id="dangky">
+ 
+    <h2 class="section-title">Đăng Ký Tham Quan</h2>
+
+    <div class="booking-wrapper">
+      
+      <div class="booking-info">
+        <h3>Trải nghiệm Đầm Phá Làng An Xuân</h3>
+        <p>
+          Điền thông tin bên dưới để đăng ký tham quan, khám phá hệ sinh thái,
+          thưởng thức hải sản địa phương và trải nghiệm đời sống ngư dân.
+        </p>
+      </div>
+
+      <form class="booking-form">
+        
+        <div class="form-group">
+          <label>Họ và tên</label>
+          <input type="text" placeholder="Nhập họ tên..." required>
+        </div>
+
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="example@email.com" required>
+        </div>
+
+        <div class="form-group">
+          <label>Số điện thoại</label>
+          <input type="tel" placeholder="09xxxxxxxx" required>
+        </div>
+
+        <div class="form-group">
+          <label>Ngày tham quan</label>
+          <input type="date" required>
+        </div>
+
+        <div class="form-group">
+          <label>Số lượng người</label>
+          <input type="number" min="1" max="50" placeholder="VD: 5">
+        </div>
+
+        <div class="form-group full">
+          <label>Ghi chú thêm</label>
+          <textarea rows="4" placeholder="Yêu cầu đặc biệt..."></textarea>
+        </div>
+
+        <button type="submit" class="btn">Gửi Đăng Ký</button>
+
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+© 2026 Website Giới Thiệu Đầm Phá Làng An Xuân
+</footer>
+<script>
+
+let btn = document.getElementById("themeToggle")
+
+btn.onclick = function(){
+
+document.body.classList.toggle("dark")
+
+if(document.body.classList.contains("dark")){
+
+btn.innerHTML="☀️ Light Mode"
+
+}else{
+
+btn.innerHTML="🌙 Dark Mode"
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
